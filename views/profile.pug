@@ -1,0 +1,72 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Document
+		link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH", crossorigin="anonymous")
+		script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js", integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz", crossorigin="anonymous")
+		script(src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js", integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r", crossorigin="anonymous")
+		script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js", integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy", crossorigin="anonymous")
+		link(rel="stylesheet", href="/css/profile.css")
+		link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css")
+
+	body 
+		script.
+			document.addEventListener('DOMContentLoaded', () => {
+				const profileIcon = document.querySelector('.send');
+				profileIcon.addEventListener('click', () => {
+				document.querySelector('#inputFile').click();
+				});	
+				document.querySelector('#inputFile').addEventListener('change', () => {
+				document.querySelector('#fileInput').submit();
+				});	
+				
+			});
+
+		.buttons
+			a.feed.btn.btn-primary.btn-sm(href="/feed", ) feed
+			a.logOut.btn.btn-danger.btn-sm(href="/logOut",) LogOut
+
+		.containerprofile
+			.cardprofile
+				
+				.profile-picture
+					- if (user.dp)
+						img(src=`/images/${user.dp}`, alt="Profile Picture")
+					- else
+						img(src="https://tse3.mm.bing.net/th?id=OIP.JAAd31mxF33HqZEgYq9zgAHaHv&pid=Api&P=0&h=180", alt="Default Profile Picture")
+
+					//- img(src=`/css/images/${user.dp}`, alt="image")
+				form#fileInput(action="/changeProfile", method="post", enctype='multipart/form-data')
+					input#inputFile(type="file", name="file")
+					button#change(type="submit") change
+				h2.name #{user.fullName}
+				h3.username @ #{user.userName}
+				button.send.btn.btn-primary.btn-sm.m-2(type="button") Change  Profile
+				a.btn.btn-danger.btn-sm(href="/logOut") Log Out
+				
+			.imageupload
+				P UPLOAD YOUR POSTS
+				.imageuploadform
+					form(action="/uploads", method="post" , enctype='multipart/form-data')
+						.inputsimage 
+							input.imageCaption(type="text", name="postText",placeholder="Image Caption")
+							input.imageChoose(type="file", name="file", placeholder="upload Image")
+						button.btn.btn-primary-btn-sm(type="submit") Upload Post
+		
+	.cardbody
+								
+				each post in user.posts				
+					.card(style="width: 18rem;")
+						img.card-img-top(src=`/images/${post.image}`, alt="...")
+						.card-body
+							p=`Caption :- ${post.postText}`
+							p=`like :${post.likes.length}`
+					
+							form(action=`/delete/${post._id}`, method="get")
+							
+								button.btn.btn-danger.btn-sm(type="submit") delete
+								
+//- p=post.createdAt
+				

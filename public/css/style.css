@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background-color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #dadada;
+  }
+  .container {
+    background-color: white;
+    width: 350px;
+    min-height: 400px;
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    top: 20px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.5);
+  }
+  .content {
+    padding-bottom: 5px;
+    
+    width: 60%;
+    position: relative;
+    margin: auto;
+    top: 5px;
+    /* bottom: 5px; */
+    /* left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0; */
+    text-align: center;
+  }
+   
+  .img1{
+    width: 50px;
+    position: relative;
+    /* top: 20px;/ */
+  }
+  .header {
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 5px;
+    /* margin-top: 40px;
+    margin-bottom: 10px;
+    line-height: 46px; */
+  }
+  .detail {
+    width: 80%;
+    height: 30px;
+    margin: 5px;
+    padding: 10px;
+    font-size: 12px;
+    color: gray;
+    border: 2px solid rgb(218, 214, 214);
+    border-radius: 15px;
+  }
+  /* .inpbtn{
+    height: 30px;
+    width: 50px;
+  } */
+    
+  h4 {
+    font-size: 13px;
+    font-weight: 700;
+    position: relative;
+    left: -60px;
+    margin: 5px;
+  }
+  
+
+  #msg{
+    color: red;
+    font-size: 10px;
+  }
+  .btn {
+    width: 50%;
+    height: 30px;
+    border: hidden;
+    border-radius: 20px;
+    font-size: 10px;
+    margin: 5px 0px;
+  }
+  
+  .int {
+    background-color: #f30d19;
+    margin: 10px 0px;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .int:hover{
+    background-color: #df0812;
+  }
+  
+  .or {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 10px 0px;
+  }
+  
+  .fbk {
+    background-color: rgb(9, 128, 240);
+    margin: 5px 0px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .fbk a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  .fbk:hover{
+    background-color: rgb(8, 110, 206);
+  }
+  .ggl{
+    text-align: center;
+    background-color: #ccc;
+  }
+  .ggl a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  .ggl:hover{
+    background-color: #a0a0a0;
+  }
+  
+  footer p {
+    font-size: 10px;
+    margin: 5px;
+    opacity: 0.7;
+  }
+  footer a{
+    text-decoration: none;
+    font-size: 10px;
+  }
+
+  footer span{
+    font-size: 10px;
+
+  }
+  p:last-child {
+    opacity: 1;
+  }
+  hr {
+    width: 70%;
+    opacity: 0.4;
+    margin: auto;
+    /* margin-left: %; */
+  }
+  .upbtn{
+    position: absolute;
+    top: 20px;
+    left: 14px;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    width: 126px;
+    padding: 11px 0px;
+    background-color: rgb(241, 236, 236);
+    border-radius: 20px;
+  }

@@ -1,0 +1,21 @@
+{
+  "name": "pintrest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3",
+    "express-session": "^1.18.0",
+    "mongoose": "^8.2.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.0",
+    "pug": "^3.0.2",
+    "uuid": "^9.0.1"
+  }
+}
