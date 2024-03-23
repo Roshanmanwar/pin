@@ -24,7 +24,7 @@ app.use(express.static('./public'));
 app.use('/', BasicRoutes);
 
 
-mongoose.connect('mongodb://localhost:27017/PINTREST').then(() => {
+mongoose.connect('mongodb+srv://roshanmanwar2024:Roshan@2024@roshan.b0g3yvl.mongodb.net/?retryWrites=true&w=majority&appName=Roshan').then(() => {
     app.listen(PORT, () => {
         console.log('server is listening on Port no .', PORT);
     })
